@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+    <title>Register user</title>
+    <h:form>
+        <h:panelGrid columns="3">
+            <h:outputLabel for="username">Username</h:outputLabel>
+            <h:inputText id="username" value="#{register.user.username}" required="true">
+                <f:ajax event="blur" render="usernameMessage" />
+            </h:inputText>
+            <h:message id="usernameMessage" for="username" />
+
+            <h:outputLabel for="password">Password</h:outputLabel>
+            <h:inputSecret id="password" value="#{register.user.password}" required="true" redisplay="true">
+                <f:ajax event="blur" render="passwordMessage" />
+            </h:inputSecret>
+            <h:message id="passwordMessage" for="password" />
+
+            <h:outputLabel for="email">Email</h:outputLabel>
+            <h:inputText id="email" value="#{register.user.email}" required="true">
+                <f:ajax event="blur" render="emailMessage" />
+            </h:inputText>
+            <h:message id="emailMessage" for="email" />
+
+            <h:outputLabel for="birthdate">Birthdate (yyyy-MM-dd)</h:outputLabel>
+            <h:inputText id="birthdate" value="#{register.user.birthdate}">
+                <f:convertDateTime pattern="yyyy-MM-dd" />
+                <f:ajax event="blur" render="birthdateMessage" />
+            </h:inputText>
+            <h:message id="birthdateMessage" for="birthdate" />
+
+            <h:panelGroup />
+            <h:commandButton value="Register" action="#{register.submit}">
+                <f:ajax execute="@form" render="@form" />
+            </h:commandButton>
+            <h:messages globalOnly="true" layout="table" />
+        </h:panelGrid>
+    </h:form>
+</h:head>
+<h:body>
+
+</h:body>
+</html>
