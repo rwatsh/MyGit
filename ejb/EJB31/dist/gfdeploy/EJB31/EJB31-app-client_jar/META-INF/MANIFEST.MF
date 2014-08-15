@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.8.4
+Created-By: 1.7.0_15-b20 (Oracle Corporation)
+X-COMMENT: Main-Class will be added automatically by build
+Main-Class: ejb31.MaMApp
+Class-Path: EJB31-common.jar lib/EJB31-common.jar 
+

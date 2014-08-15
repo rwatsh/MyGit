@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application-client version="6" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/application-client_6.xsd">
+  <display-name>EJB31-app-client</display-name>
+  <ejb-ref>
+    <ejb-ref-name>SingletonHelloWorldBean</ejb-ref-name>
+    <ejb-ref-type>Session</ejb-ref-type>
+    <remote>helloworld.beans.SingletonHelloWorldBeanRemote</remote>
+  </ejb-ref>
+  <resource-ref>
+    <res-ref-name>jms/HelloWorldQueueFactory</res-ref-name>
+    <res-type>javax.jms.ConnectionFactory</res-type>
+    <res-auth>Container</res-auth>
+    <res-sharing-scope>Shareable</res-sharing-scope>
+  </resource-ref>
+  <message-destination-ref>
+    <message-destination-ref-name>jms/HelloWorldQueue</message-destination-ref-name>
+    <message-destination-type>javax.jms.Queue</message-destination-type>
+    <message-destination-usage>Produces</message-destination-usage>
+    <message-destination-link>jms/HelloWorldQueue</message-destination-link>
+  </message-destination-ref>
+</application-client>
